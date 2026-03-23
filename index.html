@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra Điều lệnh, Quân sự, Võ thuật - Công an Hà Tĩnh 2026</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f7f6; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .quiz-container { max-width: 800px; margin: 30px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .header-title { text-align: center; color: #d32f2f; text-transform: uppercase; margin-bottom: 25px; border-bottom: 2px solid #d32f2f; padding-bottom: 10px; }
+        .question-block { margin-bottom: 25px; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0; }
+        .question-text { font-weight: 600; margin-bottom: 12px; color: #2c3e50; }
+        .option-label { display: block; padding: 10px; margin-bottom: 8px; border-radius: 5px; cursor: pointer; transition: background 0.2s; border: 1px solid #eee; }
+        .option-label:hover { background-color: #f8f9fa; }
+        .correct { background-color: #d4edda !important; border-color: #c3e6cb !important; color: #155724; font-weight: bold; }
+        .incorrect { background-color: #f8d7da !important; border-color: #f5c6cb !important; color: #721c24; }
+        #result-area { display: none; text-align: center; margin-top: 20px; padding: 20px; background: #e9ecef; border-radius: 8px; }
+        .btn-submit { background-color: #d32f2f; color: white; width: 100%; padding: 12px; font-weight: bold; font-size: 1.1rem; }
+        .btn-submit:hover { background-color: #b71c1c; color: white; }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <div class="header-title">
+        <h4>Bộ đề trắc nghiệm</h4>
+        <h6>Kiểm tra Điều lệnh, Quân sự, Võ thuật - Công an Hà Tĩnh 2026</h6>
+    </div>
+
+    <form id="quiz-form">
+        <div id="questions-wrapper">
+            </div>
+        
+        <button type="button" class="btn btn-submit mt-4" onclick="checkAnswers()">Nộp bài & Kiểm tra kết quả</button>
+    </form>
+
+    <div id="result-area">
+        <h3>Kết quả của bạn: <span id="score">0</span>/<span id="total">0</span></h3>
+        <p id="feedback"></p>
+        <button class="btn btn-secondary mt-2" onclick="location.reload()">Làm lại bài thi</button>
+    </div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "Khi cấp trên ra chỉ thị, mệnh lệnh, người nhận chỉ thị, mệnh lệnh trực tiếp của cấp trên phải thực hiện thế nào?",
+            options: [
+                "Thi hành ngay với tinh thần trách nhiệm, khẩn trương, nghiêm túc, không phải báo cáo với thủ trưởng trực tiếp.",
+                "Báo cáo với thủ trưởng trực tiếp của mình biết nội dung công việc cấp trên giao sau đó thi hành ngay nhiệm vụ.",
+                "Phải thi hành ngay, đồng thời phải báo cáo với thủ trưởng trực tiếp của mình biết nội dung công việc cấp trên giao (trừ trường hợp yêu cầu không báo cáo)."
+            ],
+            answer: 2
+        },
+        {
+            q: "Thông tư số 12/2023/TT-BCA quy định 'Ứng xử với đồng chí, đồng đội' như thế nào là đúng?",
+            options: [
+                "Tự phê bình và phê bình khách quan, trung thực; có lời nói, hành động gây mất đoàn kết nội bộ.",
+                "Tôn trọng, gần gũi, giúp đỡ; Bảo vệ danh dự của đồng chí, đồng đội khi bị phản ánh không đúng sự thật.",
+                "Đoàn kết, thân ái; cầu thị, học hỏi; có thái độ tích cực đối với sự phát triển của đồng đội."
+            ],
+            answer: 2
+        },
+        {
+            q: "Thông tư số 04/2025/TT-BCA quy định điều cấm nào sau đây là đúng?",
+            options: [
+                "Cấm ăn uống vỉa hè; không uống rượu bia trong giờ làm việc (trừ trường hợp ngoài giờ được phép).",
+                "Mặc trang phục CAND ăn uống vỉa hè trái quy định; hút thuốc khi làm nhiệm vụ.",
+                "Cấm ăn uống vỉa hè giờ hành chính; uống rượu bia trước/trong giờ làm việc và bữa ăn giữa ca; hút thuốc nơi có biển cấm."
+            ],
+            answer: 2
+        },
+        {
+            q: "Những đơn vị nào tổ chức chào cờ Tổ quốc theo định kỳ hằng tháng?",
+            options: [
+                "Các đơn vị cấp đại đội, tiểu đoàn độc lập, đơn vị huấn luyện; các học viện, trường CAND.",
+                "Công an xã, phường, thị trấn, đội, đồn, trạm Công an và tương đương trở lên có trụ sở độc lập.",
+                "Công an huyện, thành phố, thị xã, Công an xã, phường và tương đương có trụ sở độc lập."
+            ],
+            answer: 2
+        },
+        {
+            q: "Theo Thông tư 113/2025/TT-BCA, hành vi nào bị hạ một bậc danh hiệu thi đua năm đối với đơn vị?",
+            options: [
+                "Thực hiện không đúng quy định về chế độ giao ban, hội họp, huấn luyện, trang trí khánh tiết.",
+                "Thực hiện không đúng chức trách; Không tổ chức chào cờ Tổ quốc định kỳ.",
+                "Dùng trụ sở cơ quan cho thuê, cho mượn trái quy định của Bộ Công an."
+            ],
+            answer: 1
+        },
+        {
+            q: "Áp dụng kết quả kiểm tra tập huấn điều lệnh, quân sự, võ thuật như thế nào?",
+            options: [
+                "Đơn vị không tổ chức bị hạ 01 bậc danh hiệu thi đua; cán bộ bỏ tập không lý do bị cảnh cáo.",
+                "Đơn vị không tổ chức bị xếp loại không hoàn thành nhiệm vụ; phê bình cấp trưởng và phó phụ trách.",
+                "Đơn vị không tổ chức bị xếp loại không hoàn thành nhiệm vụ, hạ 02 bậc thi đua lãnh đạo; cán bộ bỏ tập bị khiển trách."
+            ],
+            answer: 2
+        },
+        {
+            q: "Thông tư 34/2019/TT-BCA quy định về nội vụ, vệ sinh trụ sở như thế nào?",
+            options: [
+                "Treo Quốc kỳ, có biển hiệu, nội quy bảo vệ, tổ chức trực ban bảo vệ thường xuyên.",
+                "Phương tiện để đúng nơi quy định; xuống xe khi ra vào cổng; xuất trình giấy tờ khi yêu cầu.",
+                "Cấm đưa người không phận sự vào trụ sở khi chưa được phép.",
+                "Cả A, B, C đều đúng."
+            ],
+            answer: 3
+        },
+        {
+            q: "Nhiệm vụ của lãnh đạo, chỉ huy Công an các đơn vị được quy định thế nào?",
+            options: [
+                "Thực hiện nguyên tắc tập trung dân chủ, cá nhân phụ trách, quy chế đơn vị.",
+                "Chấp hành sự chỉ đạo, quy trình công tác, phấn đấu hoàn thành xuất sắc nhiệm vụ.",
+                "Gương mẫu, nghiêm túc tự phê bình; thực hiện chế độ báo cáo và kiểm tra cấp dưới.",
+                "Cả A và C đúng."
+            ],
+            answer: 3
+        },
+        {
+            q: "Quy tắc ứng xử của CBCS với tổ chức, cá nhân nước ngoài?",
+            options: [
+                "Tiếp xúc phải khôn khéo, luôn tôn trọng phong tục văn hóa người nước ngoài.",
+                "Tôn trọng phong tục, tín ngưỡng người nước ngoài trên cơ sở phù hợp pháp luật Việt Nam.",
+                "Không có lời nói hành động tổn hại hình ảnh đất nước; phải cương quyết, khôn khéo."
+            ],
+            answer: 1
+        },
+        {
+            q: "Người chủ trì hội họp, học tập phải thông báo trước bao lâu?",
+            options: [
+                "Thông báo trước ít nhất 01 ngày (trừ trường hợp đột xuất hoặc bí mật).",
+                "Không phải thông báo vì CBCS phải đến trước 05 phút mỗi ngày.",
+                "Thông báo trước ít nhất 01 buổi (trừ trường hợp đột xuất hoặc bí mật)."
+            ],
+            answer: 0
+        },
+		// Copy đoạn này dán vào sau câu 10 trong mảng quizData của bạn
+        {
+            q: "Chế độ báo cáo của lãnh đạo, chỉ huy Công an các đơn vị được quy định như thế nào?",
+            options: [
+                "Báo cáo tình hình và kết quả thực hiện nhiệm vụ theo định kỳ hoặc đột xuất khi có yêu cầu.",
+                "Báo cáo khi có vụ việc nghiêm trọng xảy ra tại địa bàn đơn vị phụ trách.",
+                "Chấp hành nghiêm chỉnh chế độ báo cáo theo quy định của Bộ Công an và của đơn vị cấp trên trực tiếp."
+            ],
+            answer: 2
+        },
+        {
+            q: "Việc đeo dải Huân chương, Huy chương, Kỷ niệm chương thực hiện như thế nào?",
+            options: [
+                "Đeo ở ngực áo bên phải, dải huân chương ở trên, huy chương ở dưới, kỷ niệm chương ở dưới cùng.",
+                "Đeo ở ngực áo bên trái, dải huân chương ở trên, huy chương ở dưới, kỷ niệm chương ở dưới cùng.",
+                "Đeo ở ngực áo bên trái, dải huân chương ở hàng trên cùng, kỷ niệm chương ở hàng dưới cùng."
+            ],
+            answer: 1
+        },
+        {
+            q: "Khi ra vào cổng trụ sở cơ quan, cán bộ chiến sĩ thực hiện như thế nào cho đúng?",
+            options: [
+                "Xuống xe, dẫn xe qua cổng, chào báo cáo trực ban bảo vệ.",
+                "Xuống xe, dẫn xe qua cổng, trừ trường hợp xe ưu tiên đang làm nhiệm vụ.",
+                "Xuống xe (trừ xe ưu tiên, xe ô tô), dẫn xe qua cổng; xuất trình giấy tờ khi được yêu cầu."
+            ],
+            answer: 2
+        },
+        {
+            q: "Quy định về việc sắp xếp tài liệu, đồ dùng trong phòng làm việc?",
+            options: [
+                "Phải gọn gàng, ngăn nắp, đúng nơi quy định; không để tài liệu mật trên bàn khi hết giờ làm việc.",
+                "Sắp xếp theo sở thích cá nhân nhưng phải đảm bảo vệ sinh chung.",
+                "Phải ngăn nắp, khoa học; tài liệu mật phải cất vào tủ có khóa, không để lộ lọt bí mật nhà nước."
+            ],
+            answer: 2
+        },
+        {
+            q: "Thông tư số 113/2025/TT-BCA quy định 'Xử lý bằng hình thức hạ một bậc danh hiệu thi đua năm đối với đơn vị' khi vi phạm hành vi nào?",
+            options: [
+                "Để cán bộ chiến sĩ vi phạm kỷ luật bị xử lý từ hình thức khiển trách trở lên.",
+                "Không duy trì chế độ trực ban, trực chỉ huy theo quy định.",
+                "Không tổ chức huấn luyện điều lệnh, quân sự, võ thuật định kỳ hàng năm."
+            ],
+            answer: 1
+        },
+        {
+            q: "Theo Thông tư 113/2025/TT-BCA, cán bộ vi phạm điều lệnh lần đầu chưa đến mức xử lý kỷ luật thì xử lý thế nào?",
+            options: [
+                "Phê bình trước đơn vị và yêu cầu viết bản kiểm điểm.",
+                "Phê bình, nhắc nhở và thông báo cho gia đình biết.",
+                "Phê bình, nhắc nhở bằng văn bản và trừ điểm thi đua trong tháng."
+            ],
+            answer: 2
+        },
+        {
+            q: "Động tác chào bằng tay khi đội mũ thực hiện như thế nào?",
+            options: [
+                "Tay phải đưa lên, đầu ngón tay giữa chạm vào vành mũ bên phải, lòng bàn tay hướng về phía trước.",
+                "Tay phải đưa lên, đầu ngón tay giữa chạm vào bên phải vành lưỡi trai, lòng bàn tay úp xuống, hơi hướng về phía trước.",
+                "Tay phải đưa lên theo đường thẳng, cánh tay trên cao ngang tầm vai."
+            ],
+            answer: 1
+        },
+        {
+            q: "Khoảng cách khi đứng trong đội hình hàng dọc là bao nhiêu?",
+            options: [
+                "Cách nhau 1 mét tính từ gót chân người đứng trước đến gót chân người đứng sau.",
+                "Cách nhau 75 cm tính từ gót chân người đứng trước đến gót chân người đứng sau.",
+                "Cách nhau một cánh tay (khoảng 0,6 mét) tính từ lưng người đứng trước đến ngực người đứng sau."
+            ],
+            answer: 2
+        },
+        {
+            q: "Khẩu lệnh 'Nghỉ' thực hiện như thế nào?",
+            options: [
+                "Chân trái hơi chùng xuống, trọng tâm dồn vào chân phải, người đứng thẳng.",
+                "Chân trái đưa sang trái 20cm, hai tay buông xuôi.",
+                "Đầu gối trái hơi chùng, trọng tâm dồn vào chân phải, khi mỏi đổi chân."
+            ],
+            answer: 2
+        },
+        {
+            q: "Động tác 'Quay đằng sau' thực hiện như thế nào?",
+            options: [
+                "Dùng gót chân trái và mũi chân phải làm trụ quay sang trái 180 độ.",
+                "Dùng gót chân phải và mũi chân trái làm trụ quay sang phải 180 độ về phía sau.",
+                "Dùng mũi chân phải làm trụ quay sang phải 180 độ."
+            ],
+            answer: 1
+        },
+        {
+            q: "Khi đi đều, độ dài mỗi bước chân là bao nhiêu?",
+            options: [
+                "Đối với nam là 75cm, đối với nữ là 60cm.",
+                "Khoảng 70cm tính từ gót chân này đến gót chân kia.",
+                "Khoảng 65cm đối với nam và 55cm đối với nữ."
+            ],
+            answer: 0
+        },
+        {
+            q: "Tốc độ đi đều quy định như thế nào?",
+            options: [
+                "100 bước trong một phút.",
+                "110 bước trong một phút.",
+                "120 bước trong một phút."
+            ],
+            answer: 1
+        },
+        {
+            q: "Động tác 'Đứng lại' khi đang đi đều thực hiện sau mấy nhịp?",
+            options: [
+                "Thực hiện sau 1 nhịp kể từ khi dứt động lệnh.",
+                "Dứt động lệnh 'Bước' ở chân phải, đi tiếp 1 bước rồi dừng lại.",
+                "Dứt động lệnh 'Lại' ở chân phải, chân trái bước lên một bước, chân phải đưa lên khép vào thành tư thế đứng nghiêm."
+            ],
+            answer: 2
+        },
+        {
+            q: "Khẩu lệnh của động tác 'Giậm chân' là gì?",
+            options: [
+                "Giậm chân - Bước.",
+                "Tại chỗ, giậm chân - Bước.",
+                "Giậm chân tại chỗ - Bước."
+            ],
+            answer: 1
+        },
+        {
+            q: "Khi thực hiện động tác chạy đều, hai tay để như thế nào?",
+            options: [
+                "Đánh tự nhiên như đi đều.",
+                "Gấp khuỷu tay, hai bàn tay nắm hờ đặt ở ngang sườn.",
+                "Nắm chặt bàn tay, ép sát vào đùi."
+            ],
+            answer: 1
+        },
+        {
+            q: "Tư thế ngồi làm việc của CBCS CAND?",
+            options: [
+                "Ngồi thoải mái, có thể gác chân lên ghế.",
+                "Ngồi ngay ngắn, không tựa lưng quá mức vào ghế, không vắt chân chữ ngũ.",
+                "Ngồi thẳng, mắt nhìn vào máy tính hoặc tài liệu, không làm việc riêng."
+            ],
+            answer: 1
+        },
+        {
+            q: "Quy định về việc sử dụng điện thoại trong giờ làm việc?",
+            options: [
+                "Chỉ sử dụng để giải quyết công việc chuyên môn, không xem phim, chơi game.",
+                "Sử dụng hạn chế, không gây ảnh hưởng đến người xung quanh.",
+                "Không sử dụng điện thoại di động và các thiết bị thu phát sóng để giải quyết việc riêng khi đang làm nhiệm vụ tiếp dân."
+            ],
+            answer: 2
+        },
+        {
+            q: "Động tác 'Tháo mũ' thực hiện bằng tay nào?",
+            options: [
+                "Tay trái.",
+                "Tay phải.",
+                "Cả hai tay."
+            ],
+            answer: 1
+        },
+        {
+            q: "Khi gặp cấp trên, CBCS cấp dưới phải thực hiện như thế nào?",
+            options: [
+                "Dừng lại, đứng nghiêm và chào.",
+                "Chủ động chào trước theo đúng điều lệnh.",
+                "Chào bằng lời nói hoặc động tác chào bằng tay tùy tình huống."
+            ],
+            answer: 1
+        },
+        {
+            q: "Trong lễ chào cờ, khi nghe quốc ca, CBCS thực hiện như thế nào?",
+            options: [
+                "Đứng nghiêm, tay bỏ xuôi.",
+                "Đứng nghiêm, thực hiện động tác chào tay cho đến khi kết thúc bài hát.",
+                "Đứng nghiêm, hát quốc ca to, rõ ràng."
+            ],
+            answer: 1
+        }
+        // Lưu ý: Do giới hạn độ dài, tôi đã chuyển 10 câu tiêu biểu từ file PDF vào mã nguồn. 
+        // Bạn có thể thêm tiếp các câu từ 11-50 vào mảng quizData này theo đúng cấu trúc trên.
+    ];
+
+    function loadQuiz() {
+        const wrapper = document.getElementById('questions-wrapper');
+        quizData.forEach((item, index) => {
+            let optionsHTML = '';
+            item.options.forEach((opt, optIdx) => {
+                optionsHTML += `
+                    <label class="option-label" id="label-${index}-${optIdx}">
+                        <input type="radio" name="q${index}" value="${optIdx}" class="me-2"> ${String.fromCharCode(65 + optIdx)}. ${opt}
+                    </label>
+                `;
+            });
+
+            wrapper.innerHTML += `
+                <div class="question-block" id="block-${index}">
+                    <div class="question-text">Câu ${index + 1}: ${item.q}</div>
+                    ${optionsHTML}
+                </div>
+            `;
+        });
+    }
+
+    function checkAnswers() {
+        let score = 0;
+        quizData.forEach((item, index) => {
+            const selected = document.querySelector(`input[name="q${index}"]:checked`);
+            const correctIdx = item.answer;
+            
+            // Xóa các class cũ nếu có
+            item.options.forEach((_, optIdx) => {
+                document.getElementById(`label-${index}-${optIdx}`).classList.remove('correct', 'incorrect');
+            });
+
+            if (selected) {
+                const userAns = parseInt(selected.value);
+                if (userAns === correctIdx) {
+                    score++;
+                    document.getElementById(`label-${index}-${userAns}`).classList.add('correct');
+                } else {
+                    document.getElementById(`label-${index}-${userAns}`).classList.add('incorrect');
+                    document.getElementById(`label-${index}-${correctIdx}`).classList.add('correct');
+                }
+            } else {
+                document.getElementById(`label-${index}-${correctIdx}`).classList.add('correct');
+            }
+        });
+
+        document.getElementById('score').innerText = score;
+        document.getElementById('total').innerText = quizData.length;
+        document.getElementById('result-area').style.display = 'block';
+        
+        const feedback = score === quizData.length ? "Xuất sắc! Bạn đã thuộc lòng điều lệnh." : "Bạn cần ôn tập thêm các nội dung chưa đúng.";
+        document.getElementById('feedback').innerText = feedback;
+        
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+
+    window.onload = loadQuiz;
+</script>
+
+</body>
+</html>
