@@ -44,282 +44,939 @@
 
 <script>
     const quizData = [
-        {
-            q: "Khi cấp trên ra chỉ thị, mệnh lệnh, người nhận chỉ thị, mệnh lệnh trực tiếp của cấp trên phải thực hiện thế nào?",
-            options: [
-                "Thi hành ngay với tinh thần trách nhiệm, khẩn trương, nghiêm túc, không phải báo cáo với thủ trưởng trực tiếp.",
-                "Báo cáo với thủ trưởng trực tiếp của mình biết nội dung công việc cấp trên giao sau đó thi hành ngay nhiệm vụ.",
-                "Phải thi hành ngay, đồng thời phải báo cáo với thủ trưởng trực tiếp của mình biết nội dung công việc cấp trên giao (trừ trường hợp yêu cầu không báo cáo)."
-            ],
-            answer: 2
-        },
-        {
-            q: "Thông tư số 12/2023/TT-BCA quy định 'Ứng xử với đồng chí, đồng đội' như thế nào là đúng?",
-            options: [
-                "Tự phê bình và phê bình khách quan, trung thực; có lời nói, hành động gây mất đoàn kết nội bộ.",
-                "Tôn trọng, gần gũi, giúp đỡ; Bảo vệ danh dự của đồng chí, đồng đội khi bị phản ánh không đúng sự thật.",
-                "Đoàn kết, thân ái; cầu thị, học hỏi; có thái độ tích cực đối với sự phát triển của đồng đội."
-            ],
-            answer: 2
-        },
-        {
-            q: "Thông tư số 04/2025/TT-BCA quy định điều cấm nào sau đây là đúng?",
-            options: [
-                "Cấm ăn uống vỉa hè; không uống rượu bia trong giờ làm việc (trừ trường hợp ngoài giờ được phép).",
-                "Mặc trang phục CAND ăn uống vỉa hè trái quy định; hút thuốc khi làm nhiệm vụ.",
-                "Cấm ăn uống vỉa hè giờ hành chính; uống rượu bia trước/trong giờ làm việc và bữa ăn giữa ca; hút thuốc nơi có biển cấm."
-            ],
-            answer: 2
-        },
-        {
-            q: "Những đơn vị nào tổ chức chào cờ Tổ quốc theo định kỳ hằng tháng?",
-            options: [
-                "Các đơn vị cấp đại đội, tiểu đoàn độc lập, đơn vị huấn luyện; các học viện, trường CAND.",
-                "Công an xã, phường, thị trấn, đội, đồn, trạm Công an và tương đương trở lên có trụ sở độc lập.",
-                "Công an huyện, thành phố, thị xã, Công an xã, phường và tương đương có trụ sở độc lập."
-            ],
-            answer: 2
-        },
-        {
-            q: "Theo Thông tư 113/2025/TT-BCA, hành vi nào bị hạ một bậc danh hiệu thi đua năm đối với đơn vị?",
-            options: [
-                "Thực hiện không đúng quy định về chế độ giao ban, hội họp, huấn luyện, trang trí khánh tiết.",
-                "Thực hiện không đúng chức trách; Không tổ chức chào cờ Tổ quốc định kỳ.",
-                "Dùng trụ sở cơ quan cho thuê, cho mượn trái quy định của Bộ Công an."
-            ],
-            answer: 1
-        },
-        {
-            q: "Áp dụng kết quả kiểm tra tập huấn điều lệnh, quân sự, võ thuật như thế nào?",
-            options: [
-                "Đơn vị không tổ chức bị hạ 01 bậc danh hiệu thi đua; cán bộ bỏ tập không lý do bị cảnh cáo.",
-                "Đơn vị không tổ chức bị xếp loại không hoàn thành nhiệm vụ; phê bình cấp trưởng và phó phụ trách.",
-                "Đơn vị không tổ chức bị xếp loại không hoàn thành nhiệm vụ, hạ 02 bậc thi đua lãnh đạo; cán bộ bỏ tập bị khiển trách."
-            ],
-            answer: 2
-        },
-        {
-            q: "Thông tư 34/2019/TT-BCA quy định về nội vụ, vệ sinh trụ sở như thế nào?",
-            options: [
-                "Treo Quốc kỳ, có biển hiệu, nội quy bảo vệ, tổ chức trực ban bảo vệ thường xuyên.",
-                "Phương tiện để đúng nơi quy định; xuống xe khi ra vào cổng; xuất trình giấy tờ khi yêu cầu.",
-                "Cấm đưa người không phận sự vào trụ sở khi chưa được phép.",
-                "Cả A, B, C đều đúng."
-            ],
-            answer: 3
-        },
-        {
-            q: "Nhiệm vụ của lãnh đạo, chỉ huy Công an các đơn vị được quy định thế nào?",
-            options: [
-                "Thực hiện nguyên tắc tập trung dân chủ, cá nhân phụ trách, quy chế đơn vị.",
-                "Chấp hành sự chỉ đạo, quy trình công tác, phấn đấu hoàn thành xuất sắc nhiệm vụ.",
-                "Gương mẫu, nghiêm túc tự phê bình; thực hiện chế độ báo cáo và kiểm tra cấp dưới.",
-                "Cả A và C đúng."
-            ],
-            answer: 3
-        },
-        {
-            q: "Quy tắc ứng xử của CBCS với tổ chức, cá nhân nước ngoài?",
-            options: [
-                "Tiếp xúc phải khôn khéo, luôn tôn trọng phong tục văn hóa người nước ngoài.",
-                "Tôn trọng phong tục, tín ngưỡng người nước ngoài trên cơ sở phù hợp pháp luật Việt Nam.",
-                "Không có lời nói hành động tổn hại hình ảnh đất nước; phải cương quyết, khôn khéo."
-            ],
-            answer: 1
-        },
-        {
-            q: "Người chủ trì hội họp, học tập phải thông báo trước bao lâu?",
-            options: [
-                "Thông báo trước ít nhất 01 ngày (trừ trường hợp đột xuất hoặc bí mật).",
-                "Không phải thông báo vì CBCS phải đến trước 05 phút mỗi ngày.",
-                "Thông báo trước ít nhất 01 buổi (trừ trường hợp đột xuất hoặc bí mật)."
-            ],
-            answer: 0
-        },
-		// Copy đoạn này dán vào sau câu 10 trong mảng quizData của bạn
-        {
-            q: "Chế độ báo cáo của lãnh đạo, chỉ huy Công an các đơn vị được quy định như thế nào?",
-            options: [
-                "Báo cáo tình hình và kết quả thực hiện nhiệm vụ theo định kỳ hoặc đột xuất khi có yêu cầu.",
-                "Báo cáo khi có vụ việc nghiêm trọng xảy ra tại địa bàn đơn vị phụ trách.",
-                "Chấp hành nghiêm chỉnh chế độ báo cáo theo quy định của Bộ Công an và của đơn vị cấp trên trực tiếp."
-            ],
-            answer: 2
-        },
-        {
-            q: "Việc đeo dải Huân chương, Huy chương, Kỷ niệm chương thực hiện như thế nào?",
-            options: [
-                "Đeo ở ngực áo bên phải, dải huân chương ở trên, huy chương ở dưới, kỷ niệm chương ở dưới cùng.",
-                "Đeo ở ngực áo bên trái, dải huân chương ở trên, huy chương ở dưới, kỷ niệm chương ở dưới cùng.",
-                "Đeo ở ngực áo bên trái, dải huân chương ở hàng trên cùng, kỷ niệm chương ở hàng dưới cùng."
-            ],
-            answer: 1
-        },
-        {
-            q: "Khi ra vào cổng trụ sở cơ quan, cán bộ chiến sĩ thực hiện như thế nào cho đúng?",
-            options: [
-                "Xuống xe, dẫn xe qua cổng, chào báo cáo trực ban bảo vệ.",
-                "Xuống xe, dẫn xe qua cổng, trừ trường hợp xe ưu tiên đang làm nhiệm vụ.",
-                "Xuống xe (trừ xe ưu tiên, xe ô tô), dẫn xe qua cổng; xuất trình giấy tờ khi được yêu cầu."
-            ],
-            answer: 2
-        },
-        {
-            q: "Quy định về việc sắp xếp tài liệu, đồ dùng trong phòng làm việc?",
-            options: [
-                "Phải gọn gàng, ngăn nắp, đúng nơi quy định; không để tài liệu mật trên bàn khi hết giờ làm việc.",
-                "Sắp xếp theo sở thích cá nhân nhưng phải đảm bảo vệ sinh chung.",
-                "Phải ngăn nắp, khoa học; tài liệu mật phải cất vào tủ có khóa, không để lộ lọt bí mật nhà nước."
-            ],
-            answer: 2
-        },
-        {
-            q: "Thông tư số 113/2025/TT-BCA quy định 'Xử lý bằng hình thức hạ một bậc danh hiệu thi đua năm đối với đơn vị' khi vi phạm hành vi nào?",
-            options: [
-                "Để cán bộ chiến sĩ vi phạm kỷ luật bị xử lý từ hình thức khiển trách trở lên.",
-                "Không duy trì chế độ trực ban, trực chỉ huy theo quy định.",
-                "Không tổ chức huấn luyện điều lệnh, quân sự, võ thuật định kỳ hàng năm."
-            ],
-            answer: 1
-        },
-        {
-            q: "Theo Thông tư 113/2025/TT-BCA, cán bộ vi phạm điều lệnh lần đầu chưa đến mức xử lý kỷ luật thì xử lý thế nào?",
-            options: [
-                "Phê bình trước đơn vị và yêu cầu viết bản kiểm điểm.",
-                "Phê bình, nhắc nhở và thông báo cho gia đình biết.",
-                "Phê bình, nhắc nhở bằng văn bản và trừ điểm thi đua trong tháng."
-            ],
-            answer: 2
-        },
-        {
-            q: "Động tác chào bằng tay khi đội mũ thực hiện như thế nào?",
-            options: [
-                "Tay phải đưa lên, đầu ngón tay giữa chạm vào vành mũ bên phải, lòng bàn tay hướng về phía trước.",
-                "Tay phải đưa lên, đầu ngón tay giữa chạm vào bên phải vành lưỡi trai, lòng bàn tay úp xuống, hơi hướng về phía trước.",
-                "Tay phải đưa lên theo đường thẳng, cánh tay trên cao ngang tầm vai."
-            ],
-            answer: 1
-        },
-        {
-            q: "Khoảng cách khi đứng trong đội hình hàng dọc là bao nhiêu?",
-            options: [
-                "Cách nhau 1 mét tính từ gót chân người đứng trước đến gót chân người đứng sau.",
-                "Cách nhau 75 cm tính từ gót chân người đứng trước đến gót chân người đứng sau.",
-                "Cách nhau một cánh tay (khoảng 0,6 mét) tính từ lưng người đứng trước đến ngực người đứng sau."
-            ],
-            answer: 2
-        },
-        {
-            q: "Khẩu lệnh 'Nghỉ' thực hiện như thế nào?",
-            options: [
-                "Chân trái hơi chùng xuống, trọng tâm dồn vào chân phải, người đứng thẳng.",
-                "Chân trái đưa sang trái 20cm, hai tay buông xuôi.",
-                "Đầu gối trái hơi chùng, trọng tâm dồn vào chân phải, khi mỏi đổi chân."
-            ],
-            answer: 2
-        },
-        {
-            q: "Động tác 'Quay đằng sau' thực hiện như thế nào?",
-            options: [
-                "Dùng gót chân trái và mũi chân phải làm trụ quay sang trái 180 độ.",
-                "Dùng gót chân phải và mũi chân trái làm trụ quay sang phải 180 độ về phía sau.",
-                "Dùng mũi chân phải làm trụ quay sang phải 180 độ."
-            ],
-            answer: 1
-        },
-        {
-            q: "Khi đi đều, độ dài mỗi bước chân là bao nhiêu?",
-            options: [
-                "Đối với nam là 75cm, đối với nữ là 60cm.",
-                "Khoảng 70cm tính từ gót chân này đến gót chân kia.",
-                "Khoảng 65cm đối với nam và 55cm đối với nữ."
-            ],
-            answer: 0
-        },
-        {
-            q: "Tốc độ đi đều quy định như thế nào?",
-            options: [
-                "100 bước trong một phút.",
-                "110 bước trong một phút.",
-                "120 bước trong một phút."
-            ],
-            answer: 1
-        },
-        {
-            q: "Động tác 'Đứng lại' khi đang đi đều thực hiện sau mấy nhịp?",
-            options: [
-                "Thực hiện sau 1 nhịp kể từ khi dứt động lệnh.",
-                "Dứt động lệnh 'Bước' ở chân phải, đi tiếp 1 bước rồi dừng lại.",
-                "Dứt động lệnh 'Lại' ở chân phải, chân trái bước lên một bước, chân phải đưa lên khép vào thành tư thế đứng nghiêm."
-            ],
-            answer: 2
-        },
-        {
-            q: "Khẩu lệnh của động tác 'Giậm chân' là gì?",
-            options: [
-                "Giậm chân - Bước.",
-                "Tại chỗ, giậm chân - Bước.",
-                "Giậm chân tại chỗ - Bước."
-            ],
-            answer: 1
-        },
-        {
-            q: "Khi thực hiện động tác chạy đều, hai tay để như thế nào?",
-            options: [
-                "Đánh tự nhiên như đi đều.",
-                "Gấp khuỷu tay, hai bàn tay nắm hờ đặt ở ngang sườn.",
-                "Nắm chặt bàn tay, ép sát vào đùi."
-            ],
-            answer: 1
-        },
-        {
-            q: "Tư thế ngồi làm việc của CBCS CAND?",
-            options: [
-                "Ngồi thoải mái, có thể gác chân lên ghế.",
-                "Ngồi ngay ngắn, không tựa lưng quá mức vào ghế, không vắt chân chữ ngũ.",
-                "Ngồi thẳng, mắt nhìn vào máy tính hoặc tài liệu, không làm việc riêng."
-            ],
-            answer: 1
-        },
-        {
-            q: "Quy định về việc sử dụng điện thoại trong giờ làm việc?",
-            options: [
-                "Chỉ sử dụng để giải quyết công việc chuyên môn, không xem phim, chơi game.",
-                "Sử dụng hạn chế, không gây ảnh hưởng đến người xung quanh.",
-                "Không sử dụng điện thoại di động và các thiết bị thu phát sóng để giải quyết việc riêng khi đang làm nhiệm vụ tiếp dân."
-            ],
-            answer: 2
-        },
-        {
-            q: "Động tác 'Tháo mũ' thực hiện bằng tay nào?",
-            options: [
-                "Tay trái.",
-                "Tay phải.",
-                "Cả hai tay."
-            ],
-            answer: 1
-        },
-        {
-            q: "Khi gặp cấp trên, CBCS cấp dưới phải thực hiện như thế nào?",
-            options: [
-                "Dừng lại, đứng nghiêm và chào.",
-                "Chủ động chào trước theo đúng điều lệnh.",
-                "Chào bằng lời nói hoặc động tác chào bằng tay tùy tình huống."
-            ],
-            answer: 1
-        },
-        {
-            q: "Trong lễ chào cờ, khi nghe quốc ca, CBCS thực hiện như thế nào?",
-            options: [
-                "Đứng nghiêm, tay bỏ xuôi.",
-                "Đứng nghiêm, thực hiện động tác chào tay cho đến khi kết thúc bài hát.",
-                "Đứng nghiêm, hát quốc ca to, rõ ràng."
-            ],
-            answer: 1
-        }
-        // Lưu ý: Do giới hạn độ dài, tôi đã chuyển 10 câu tiêu biểu từ file PDF vào mã nguồn. 
-        // Bạn có thể thêm tiếp các câu từ 11-50 vào mảng quizData này theo đúng cấu trúc trên.
-    ];
+  {
+    "id": 1,
+    "question": "Khi cấp trên ra chỉ thị, mệnh lệnh, người nhận chỉ thị, mệnh lệnh trực tiếp của cấp trên phải thực hiện thế nào?",
+    "options": [
+      "Thi hành ngay với tinh thần trách nhiệm, khẩn trương, nghiêm túc, không phải báo cáo với thủ trưởng trực tiếp.",
+      "Báo cáo với thủ trưởng trực tiếp của mình biết nội dung công việc cấp trên giao sau đó thi hành ngay nhiệm vụ.",
+      "Phải thi hành ngay, đồng thời phải báo cáo với thủ trưởng trực tiếp của mình biết nội dung công việc cấp trên giao (trừ trường hợp cấp trên ra chỉ thị, mệnh lệnh yêu cầu không báo cáo nội dung với thủ trưởng trực tiếp)."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 2,
+    "question": "Thông tư số 12/2023/TT-BCA, ngày 20/3/2023 của Bộ Công an quy định “Ứng xử với đồng chí, đồng đội” như thế nào là đúng?",
+    "options": [
+      "Tự phê bình và phê bình khách quan, trung thực, chân thành, thẳng thắn, mang tính xây dựng; có lời nói, hành động gây mất đoàn kết nội bộ, vu khống, nói không đúng sự thật, hạ uy tín, trả thù cá nhân.",
+      "Tôn trọng, gần gủi, giúp đỡ, chia sẽ kinh nghiệm, lắng nghe, xem xét giải quyết tâm tư, nguyện vọng và những đề nghị chính đáng. Bảo vệ danh dự của đồng chí, đồng đội khi bị phản ánh, khiếu nại, tố cáo không đúng sự thật.",
+      "Đoàn kết, thân ái giúp đỡ, hợp tác trong quá trình thực hiện nhiệm vụ được giao; cầu thị, học hỏi, tiếp thu ý kiến đúng đắn của đồng chí, đồng đội; có thái độ tích cực đối với sự phát triển, tiến bộ của đồng chí, đồng đội."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 3,
+    "question": "Thông tư số 04/2025/TT-BCA, ngày 13/01/2025 Bộ Công an quy định những điều cấm đối với cán bộ, chiến sĩ Công an nhân dân, quy định nào sau đây là đúng?",
+    "options": [
+      "Cấm cán bộ, chiến sĩ ăn, uống ở hàng quán vỉa hè; không uống rượu, bia và các chất có cồn trong giờ làm việc...",
+      "Mặc trang phục Công an nhân dân ăn, uống ở hàng quán mở trên vỉa hè trái quy định; hút thuốc khi làm nhiệm vụ...",
+      "Cấm cán bộ, chiến sĩ ăn, uống ở hàng quán vỉa hè trong giờ hành chính; uống rượu, bia và các chất có cồn trước, trong giờ làm việc..."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 4,
+    "question": "Những đơn vị nào tổ chức chào cờ Tổ quốc theo định kỳ hằng tháng?",
+    "options": [
+      "Các đơn vị cấp đại đội, tiểu đoàn có trụ sở độc lập, các đơn vị huấn luyện tổ chức cho cán bộ, chiến sĩ; các học viện, trường Công an nhân dân.",
+      "Công an xã, phường, thị trấn, đội, đồn, trạm Công an và tương đương trở lên có trụ sở độc lập.",
+      "Công an huyện, thành phố, thị xã, Công an xã, phường, thị trấn, các đơn vị cấp đại đội, tiểu đoàn và tương đương có trụ sở độc lập."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 5,
+    "question": "Theo Thông tư số 113/2025/TT-BCA quy định “Xử lý bằng hình thức hạ một bậc danh hiệu thi đua năm đối với đơn vị vi phạm thuộc hành vi nào sau đây?",
+    "options": [
+      "Thực hiện không đúng quy định về chế độ giao ban, hội họp, hội nghị, buổi lễ, học tập, huấn luyện...",
+      "Thực hiện không đúng chức trách, nhiệm vụ được giao; Không tổ chức chào cờ Tổ quốc định kỳ.",
+      "Dùng trụ sở cơ quan, đơn vị cho thuê, cho mượn trái quy định của Bộ Công an."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 6,
+    "question": "Thông tư số 115/2025/TT-BCA quy định về tập huấn điều lệnh, quân sự, võ thuật. Áp dụng kết quả kiểm tra tập huấn như thế nào?",
+    "options": [
+      "Đơn vị không tổ chức tập huấn bị Lãnh đạo cấp trên phê bình và hạ 01 bậc danh hiệu thi đua...",
+      "Đơn vị không tổ chức tập huấn bị xếp loại không hoàn thành nhiệm vụ trong năm, đồng thời phê bình đối với cấp trưởng...",
+      "Đơn vị không tổ chức tập huấn bị xếp loại không hoàn thành nhiệm vụ trong năm, đồng thời xem xét hạ 02 bậc danh hiệu thi đua..."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 7,
+    "question": "Thông tư số 34/2019/TT-BCA quy định “Nội vụ, vệ sinh trụ sở cơ quan, doanh trại như thế nào?",
+    "options": [
+      "Trụ sở phải treo Quốc kỳ, có biển hiệu, nội quy bảo vệ, tổ chức trực ban bảo vệ...",
+      "Xe cộ phải để đúng nơi quy định, ra vào cổng phải xuất trình giấy tờ và xuống xe...",
+      "Cấm đưa người không có phận sự vào trụ sở khi chưa được phép.",
+      "Cả A, B, C."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 8,
+    "question": "Thông tư số 34/2019/TT-BCA quy định “Chức trách, nhiệm vụ của lãnh đạo, chỉ huy Công an các đơn vị, địa phương như thế nào?",
+    "options": [
+      "Thực hiện nguyên tắc tập trung dân chủ, tập thể lãnh đạo, cá nhân phụ trách...",
+      "Chấp hành nghiêm chỉnh sự lãnh đạo, thực hiện đúng quy chế làm việc, quy trình công tác...",
+      "Gương mẫu trong công tác, chiến đấu, thực hiện đúng chế độ thông tin báo cáo...",
+      "Cả A và C đúng."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 9,
+    "question": "Quy tắc ứng xử của cán bộ, chiến sĩ CAND với tổ chức, cá nhân nước ngoài như thế nào?",
+    "options": [
+      "Khi tiếp xúc phải khôn khéo, luôn tôn trọng phong tục, tập quán và văn hóa của người nước ngoài.",
+      "Tôn trọng phong tục, tập quán... trên cơ sở phù hợp với chính sách đối ngoại và pháp luật Việt Nam.",
+      "Không có lời nói, hành động làm tổn hại đến hình ảnh đất nước, con người Việt Nam; danh dự của CAND."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 10,
+    "question": "Tổ chức hội họp, học tập người chủ trì có phải thông báo trước và chuẩn bị nội dung cuộc họp không?",
+    "options": [
+      "Phải chuẩn bị nội dung và thông báo trước ít nhất 01 ngày.",
+      "Không phải thông báo vì cán bộ phải đến đơn vị làm việc trước 05 phút.",
+      "Phải chuẩn bị nội dung và thông báo trước ít nhất là 01 buổi."
+    ],
+    "answer": 2
+  }, 
+  {
+    "id": 11,
+    "question": "Thông tư số 12/2023/TT-BCA, ngày 20/3/2023 của Bộ Công an quy định về “Quy tắc ứng xử của cán bộ, chiến sĩ Công an nhân dân với Nhân dân như thế nào?",
+    "options": [
+      "Kính trọng, lễ phép với Nhân dân; gắn bó mật thiết với Nhân dân; tận tình, trách nhiệm giải quyết bất cứ công việc, yêu cầu nào của Nhân dân.",
+      "Gương mẫu, vận động, giáo dục người thân và Nhân dân chấp hành nghiêm chủ trương, đường lối của Đảng, chính sách, pháp luật của Nhà nước, quy định của địa phương nơi cư trú.",
+      "Thường xuyên tuyên truyền, vận động Nhân dân chấp hành nghiêm chủ trương, đường lối của Đảng, chính sách pháp luật của Nhà nước và tự nguyện, tích cực tham gia phong trào “Toàn dân bảo vệ an ninh Tổ quốc”."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 12,
+    "question": "Khi người thi hành chỉ thị, mệnh lệnh có ý kiến đề đạt, thì người ra chỉ thị, mệnh lệnh cần xử lý như thế nào?",
+    "options": [
+      "Người ra chỉ thị, mệnh lệnh không chấp nhận và yêu cầu người nhận chỉ thị, mệnh lệnh phải thực hiện ngay.",
+      "Người ra chỉ thị, mệnh lệnh phải nghiên cứu xem xét; nếu thấy chỉ thị, mệnh lệnh chưa đúng phải kịp thời điều chỉnh, bổ sung, sửa đổi.",
+      "Yêu cầu người nhận chỉ thị, mệnh lệnh phải làm ngay; ý kiến đề đạt sẽ được nghiên cứu, xem xét, giải quyết sau."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 13,
+    "question": "Điều lệnh nội vụ Công an nhân dân quy định cán bộ, chiến sĩ phải chấp hành kỷ luật công tác như thế nào cho đúng?",
+    "options": [
+      "Cán bộ, chiến sĩ phải có mặt tại đơn vị trước giờ làm việc 05 phút và nghỉ đúng giờ quy định.",
+      "Cán bộ, chiến sĩ phải có mặt tại đơn vị đúng giờ quy định và nghỉ đúng giờ quy định.",
+      "Có mặt tại nơi làm việc trước 10 phút và nghỉ đúng giờ quy định."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 14,
+    "question": "Theo Thông tư số 113/2025/TT-BCA, ngày 28/11/2025 của Bộ Công an quy định “Xử lý bằng hình thức hạ hai bậc danh hiệu thi đua năm đối với đơn vị vi phạm” hành vi nào sau đây?",
+    "options": [
+      "Tổng số lượt cán bộ, chiến sĩ vi phạm điều lệnh trong năm có tỷ lệ từ 15% trở lên so với biên chế của đơn vị.",
+      "Không có danh sách trực hoặc lịch trực được cấp có thẩm quyền phê duyệt; bố trí trực chỉ huy, trực ban, thường trực chiến đấu không đủ cơ cấu theo quy định của Bộ trưởng Bộ Công an.",
+      "Đơn vị tập huấn điều lệnh, quân sự, võ thuật Công an nhân dân trong năm không đạt yêu cầu."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 15,
+    "question": "Việc ghi chương trình, kế hoạch công tác tuần của cán bộ, chiến sĩ như thế nào là đúng?",
+    "options": [
+      "Kế hoạch công tác tuần của cán bộ, chiến sĩ ghi theo Mẫu “Sổ kế hoạch công tác tuần”.",
+      "Sổ kế hoạch công tác tuần phải ghi đầy đủ, cụ thể dự kiến nội dung công việc trong tuần và kết quả thực hiện từng ngày.",
+      "Lãnh đạo, chỉ huy trực tiếp phụ trách cán bộ, chiến sĩ có trách nhiệm nhận xét, đánh giá kết quả thực hiện trong tuần và phê duyệt nội dung công tác tuần tiếp theo vào ngày thứ Sáu hàng tuần.",
+      "Cả 3 phương án trên."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 16,
+    "question": "Công an các đơn vị, địa phương và cán bộ, chiến sĩ phải xây dựng chương trình, kế hoạch công tác như thế nào?",
+    "options": [
+      "Công an các đơn vị, địa phương phải xây dựng chương trình, kế hoạch công tác tuần, tháng, quý, 6 tháng, năm; cán bộ, chiến sĩ Công an nhân dân phải xây dựng chương trình, kế hoạch công tác tuần được lãnh đạo, chỉ huy trực tiếp phê duyệt.",
+      "Các đơn vị, địa phương phải xây dựng chương trình, kế hoạch công tác tháng, quý, 6 tháng, 1 năm; cán bộ, chiến sĩ Công an nhân dân phải xây dựng chương trình, kế hoạch công tác được thủ trưởng trực tiếp phụ trách phê duyệt, nếu cần thiết.",
+      "Công an các đơn vị, địa phương và cán bộ, chiến sĩ Công an nhân dân phải xây dụng chương trình, kế hoạch công tác năm do thủ trưởng trực tiếp phụ trách phê duyệt; kế hoạch công tác tuần, tháng, quý, 6 tháng, căn cứ vào công tác năm để thực hiện."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 17,
+    "question": "Điều lệnh nội vụ CAND quy định trong chiến đấu cán bộ, chiến sĩ phải thực hiện yêu cầu nào?",
+    "options": [
+      "Phải nêu cao chủ nghĩa anh hùng cách mạng, mưu trí, dũng cảm, sẵn sàng hy sinh bảo vệ Tổ quốc, bảo vệ Đảng, Nhà nước, Nhân dân và chế độ xã hội chủ nghĩa.",
+      "Trong bất kỳ hoàn cảnh nào cũng phải kiên quyết bảo vệ đồng đội, bảo vệ Nhân dân, bảo vệ vũ khí, phương tiện chiến đấu, hồ sơ, tài liệu; giữ vững khí tiết của người Công an cách mạng.",
+      "Chấp hành nghiêm kỷ luật, mệnh lệnh, sẵn sàng nhận nhiệm vụ được giao; thực hiện nghiêm các quy định về phương án chiến đấu, tuyệt đối bảo vệ bí mật.",
+      "Cả A và B."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 18,
+    "question": "Cán bộ, chiến sĩ Công an nhân dân khi tham gia tập huấn điều lệnh, huấn luyện quân sự, võ thuật, thể thao phải chấp hành quy định nào?",
+    "options": [
+      "Phải chấp hành nghiêm nội quy, kỷ luật nơi luyện tập, thao trường và mệnh lệnh của người chỉ huy.",
+      "Phải chấp hành nghiêm nội quy, giữ đúng tư thế lễ tiết tác phong, kỷ luật nơi tập luyện, giữ gìn vệ sinh chung.",
+      "Phải mang mặc trang phục đúng quy định, mang theo vật chất đầy đủ để phục vụ công tác huấn luyện."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 19,
+    "question": "Khi tổ chức hội họp, buổi lễ, người dự hội họp, buổi lễ có được ủy quyền cho người khác đi thay không?",
+    "options": [
+      "Không được ủy quyền cho người khác đi thay.",
+      "Được ủy quyền cho người khác đi thay, không phải báo cáo cấp triệu tập vì đã có giấy mời của đơn vị.",
+      "Được ủy quyền cho người khác đi thay nhưng người đi dự thay phải được cấp triệu tập đồng ý."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 20,
+    "question": "Khi gặp tình huống khẩn cấp, đột xuất, bất ngờ có nguy cơ đe dọa, xâm phạm đến an ninh, trật tự, cán bộ, chiến sĩ phải làm gì?",
+    "options": [
+      "Phải tìm cách thông báo cho đơn vị Công an gần nhất biết để giải quyết.",
+      "Phải tham gia giải quyết và tìm mọi cách ngăn chặn hậu quả xảy ra và báo ngay cho đơn vị Công an hoặc chính quyền địa phương nơi gần nhất để giải quyết.",
+      "Phải báo cáo với thủ trưởng phụ trách trực tiếp xin ý kiến chỉ đạo."
+    ],
+    "answer": 1
+  }, 
+  {
+    "id": 21,
+    "question": "Cấp trên ra chỉ thị, mệnh lệnh như thế nào cho đúng với quy định Điều lệnh nội vụ Công an nhân dân?",
+    "options": [
+      "Tùy tình hình thực tế công việc để ra chỉ thị, mệnh lệnh đối với cán bộ, chiến sĩ.",
+      "Ra chỉ thị, mệnh lệnh trực tiếp không cần qua thủ trưởng quản lý cán bộ, chiến sĩ.",
+      "Cấp trên ra chỉ thị, mệnh lệnh phải qua từng cấp, từ trên xuống dưới theo hệ thống tổ chức của lực lượng Công an nhân dân."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 22,
+    "question": "Khi tổ chức hội nghị, buổi lễ, cán bộ, chiến sĩ dự có được rời khỏi nơi hội nghị, buổi lễ ngay sau khi người chủ trì tuyên bố kết thúc?",
+    "options": [
+      "Được rời khỏi nơi hội nghị ngay sau khi người chủ trì tuyên bố kết thúc.",
+      "Được rời khỏi nơi hội nghị, hội họp và ra về cùng với lãnh đạo cấp trên.",
+      "Được rời khỏi nơi tổ chức hội nghị, cuộc họp, buổi lễ, học tập sau khi người chủ trì tuyên bố kết thúc, lãnh đạo cấp trên ra về."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 24,
+    "question": "Đồng chí cho biết nhiệm vụ của cán bộ trực ban đơn vị được quy định như thế nào?",
+    "options": [
+      "Phải giúp thủ trưởng nắm vững quân số, vũ khí, trang bị, phương tiện; đề xuất xử lý và giải quyết các yêu cầu công tác, chiến đấu, xây dựng lực lượng, hậu cần kỹ thuật; phải đeo băng trực ban; ghi chép đầy đủ tình hình trong ca trực.",
+      "Phải nắm vững tình hình mọi mặt của đơn vị để xử lý và giải quyết các công việc theo đúng chức trách, nhiệm vụ, quyền hạn được giao; phải đeo băng trực ban; có sổ ghi chép và phương tiện cần thiết.",
+      "Phải có mặt tại đơn vị, mặc trang phục CAND đúng quy định; giúp thủ trưởng nắm vững quân số, vũ khí, trang bị; đề xuất xử lý và giải quyết các yêu cầu công tác; phải đeo băng trực ban."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 25,
+    "question": "Thông tư số 12/2023/TT-BCA quy định “Ứng xử khi sử dụng tài khoản Internet, mạng xã hội” như thế nào?",
+    "options": [
+      "Khi giao tiếp qua điện thoại phải luôn văn minh, lịch sự, nhẹ nhàng; không trao đổi nội dung bí mật qua điện thoại.",
+      "Không đăng tải, lưu trữ, bình luận, phát tán, chia sẻ các thông tin, tài liệu, hình ảnh có nội dung sai sự thật, chưa được kiểm chứng, trái với đường lối của Đảng, quy định của ngành.",
+      "Thường xuyên giữ gìn, bảo vệ và sử dụng tài sản, phương tiện được trang bị tiết kiệm, hiệu quả.",
+      "Cả A và B."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 26,
+    "question": "Công an xã, phường, đồn Công an và đơn vị tương đương tổ chức giao ban như thế nào?",
+    "options": [
+      "Tổ chức giao ban hằng ngày.",
+      "Tổ chức giao ban hằng tuần.",
+      "Tổ chức giao ban hằng ngày, tuần, tháng, quý."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 27,
+    "question": "Cán bộ, chiến sĩ thường trực chiến đấu phải thực hiện những yêu cầu nào cho đúng?",
+    "options": [
+      "Trực tại nhà, khi nào lãnh đạo cấp trên triệu tập thì có mặt.",
+      "Giờ hành chính trực tại đơn vị, hết giờ thì trực tại nhà khi cần liên lạc qua điện thoại.",
+      "Phải có mặt tại đơn vị, mặc trang phục Công an nhân dân đúng quy định, sẵn sàng giải quyết công việc khi có yêu cầu."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 28,
+    "question": "Cán bộ, chiến sĩ phải thực hiện chế độ bảo mật như thế nào cho đúng?",
+    "options": [
+      "Không tự ý tìm hiểu công việc người khác; không tự tiện xem tài liệu nơi không có phận sự; không cung cấp, phát ngôn trái phép thông tin bí mật.",
+      "Phải chấp hành nghiêm các quy định về bảo vệ bí mật của Đảng, Nhà nước và Bộ Công an; khi thấy dấu hiệu lộ lọt phải kịp thời ngăn chặn và báo cáo.",
+      "Không tự ý tìm hiểu công việc người khác; không tự tiện xem tài liệu; không chuyển tài liệu qua mạng internet không được bảo mật.",
+      "Cả A và B."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 29,
+    "question": "Thông tư số 12/2023/TT-BCA quy định “Quy tắc ứng xử chung” như thế nào là đúng?",
+    "options": [
+      "Không trốn tránh, đùn đẩy trách nhiệm; không có hành vi làm ảnh hưởng tiêu cực đến quyền lợi hợp pháp, danh dự của công dân.",
+      "Nhận thức cao về văn hóa ứng xử nơi công cộng; luôn chung tay bảo vệ nền văn hóa văn minh.",
+      "Chấp hành nội quy nơi công cộng; ứng xử văn minh, thân thiện, phù hợp với chuẩn mực đạo đức, bản sắc văn hóa dân tộc.",
+      "Đáp án A, C đúng."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 30,
+    "question": "Điều lệnh nội vụ Công an nhân dân quy định việc quản lý tài liệu được thực hiện như thế nào?",
+    "options": [
+      "Tài liệu phải được phân loại, quản lý theo quy định bảo vệ bí mật Nhà nước; hết giờ làm việc phải sắp xếp gọn gàng, bảo quản theo quy định.",
+      "CBCS làm việc ngoài giờ hoặc mang tài liệu nghiệp vụ đi công tác phải được sự đồng ý của thủ trưởng và có trách nhiệm bảo vệ an toàn.",
+      "CBCS được giao quản lý tài liệu phải chặt chẽ, có sổ theo dõi; phân công cán bộ có chuyên môn quản lý.",
+      "Cả A và B."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 31,
+    "question": "Cán bộ, chiến sĩ sử dụng trang phục như thế nào cho đúng với quy định Điều lệnh nội vụ CAND?",
+    "options": [
+      "Phải đồng bộ, thống nhất, gọn gàng, sạch sẽ, là phẳng, cài đủ khóa, cúc; đeo cấp hiệu, phù hiệu; mặc áo sơ mi trắng, thắt caravát (thu đông), đi giầy, tất do Bộ cấp.",
+      "Phải đồng bộ, thống nhất, cài đủ khóa, cúc; đeo cấp hiệu, phù hiệu, số hiệu; mặc áo sơ mi trắng, thắt caravát, đi giầy, tất do Bộ cấp.",
+      "Phải gọn gàng, sạch sẽ, là phẳng; đeo cấp hiệu, phù hiệu, số hiệu; mặc áo sơ mi trắng, thắt caravát; đi giầy hoặc dép có quai hậu do Bộ cấp."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 32,
+    "question": "Thông tư số 12/2023/TT-BCA quy định “Ứng xử với cấp trên” như thế nào?",
+    "options": [
+      "Phục tùng sự chỉ đạo, mệnh lệnh; tôn trọng, tin tưởng cấp trên; báo cáo trung thực, kịp thời kết quả thực hiện nhiệm vụ.",
+      "Gương mẫu trong công tác, tu dưỡng rèn luyện phẩm chất để cấp dưới học tập, noi theo.",
+      "Tin tưởng, khuyến khích năng lực sở trường; tạo điều kiện cho cấp dưới học tập nâng cao trình độ.",
+      "Tất cả đáp án trên."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 33,
+    "question": "Đồng chí cho biết trang phục Công an nhân dân gồm những loại nào?",
+    "options": [
+      "Trang phục thường dùng xuân hè, trang phục thường dùng thu đông, áo mưa, áo bạt.",
+      "Lễ phục xuân hè, lễ phục thu đông; trang phục thường dùng xuân hè, thu đông; trang phục chuyên dùng.",
+      "Trang phục thường dùng xuân hè, thu đông, áo sơ mi trắng."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 34,
+    "question": "Những điều cấm đối với cán bộ, chiến sĩ Công an nhân dân. Theo đồng chí, đáp án nào đúng?",
+    "options": [
+      "Nhuộm tóc khác màu đen; móng tay móng chân để dài, sơn màu; nam để tóc dài trùm tai hoặc cắt sát da đầu (trừ hói); để râu ria (trừ bệnh lý).",
+      "Nam đục lỗ xỏ khuyên; nữ đục lỗ xỏ khuyên tại vị trí khác dái tai (trừ yêu cầu nghiệp vụ được cấp trên quyết định).",
+      "Để tay vào túi quần, túi áo khi làm nhiệm vụ; đeo kính tối màu khi trực tiếp giải quyết công việc với người khác.",
+      "Tất cả A, B, C."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 35,
+    "question": "Việc đeo huân chương, huy chương, kỷ niệm chương, danh hiệu vinh dự Nhà nước ở vị trí nào?",
+    "options": [
+      "Đeo ở ngực áo bên phải.",
+      "Đeo ở hai bên ngực áo.",
+      "Đeo ở ngực áo bên trái."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 36,
+    "question": "Thứ tự đeo huân chương, huy chương, kỷ niệm chương, danh hiệu vinh dự Nhà nước như thế nào?",
+    "options": [
+      "Đeo hạng bậc thấp bên trên, bậc cao bên dưới theo thứ tự từ phải qua trái.",
+      "Hạng bậc thấp, hạng bậc cao đeo ngang hàng theo thứ tự từ phải qua trái.",
+      "Theo thứ tự từ phải qua trái, hạng bậc cao bên trên, hạng bậc thấp bên dưới."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 37,
+    "question": "Khi dự Lễ chào cờ, dâng hoa... mặc trang phục CAND, khi hô khẩu lệnh “Chào cờ, chào” có phải thực hiện động tác chào không?",
+    "options": [
+      "Không thực hiện động tác chào, chỉ đứng nghiêm.",
+      "Tất cả cán bộ, chiến sĩ tham dự Lễ mặc trang phục Công an nhân dân thực hiện động tác chào.",
+      "Cán bộ, chiến sĩ Công an đứng ở hàng ngang thứ nhất thực hiện động tác chào."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 38,
+    "question": "Cán bộ, chiến sĩ khi đang nghỉ phép, nếu lãnh đạo yêu cầu có mặt để thực hiện nhiệm vụ phải chấp hành như thế nào?",
+    "options": [
+      "Báo cáo lãnh đạo khi hết thời gian nghỉ phép sẽ lên giải quyết.",
+      "Báo cáo lãnh đạo không lên đơn vị được vì đang giải quyết việc riêng.",
+      "Phải có mặt kịp thời để nhận nhiệm vụ."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 39,
+    "question": "Theo Thông tư 113/2025/TT-BCA, lỗi nào bị xử lý bằng hình thức hạ một bậc xếp loại cán bộ trong năm?",
+    "options": [
+      "Thực hiện không đúng quy định về việc ra chỉ thị, mệnh lệnh và thực hiện chỉ thị mệnh lệnh.",
+      "Không xử lý vi phạm điều lệnh hoặc áp dụng hình thức không đúng; lợi dụng chức vụ để sách nhiễu, đòi tiền, nhận quà.",
+      "Gây mất đoàn kết nội bộ, ảnh hưởng đến nhiệm vụ chính trị và uy tín của lực lượng."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 40,
+    "question": "Khi tổ chức Lễ viếng đám tang (người thân hoặc đồng đội), mặc trang phục CAND có phải đội mũ kê pi không?",
+    "options": [
+      "Không phải đội mũ kê pi.",
+      "Phải đội mũ kê pi.",
+      "Chỉ có trưởng đoàn mặc trang phục CAND và đội mũ kê pi."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 41,
+    "question": "Trước khi phát biểu lần đầu hoặc sau khi kết thúc phát biểu tại hội nghị, buổi lễ phải thực hiện chào ở vị trí nào?",
+    "options": [
+      "Đứng giữa sân khấu hoặc hội trường.",
+      "Đứng bên cạnh bục.",
+      "Tại nơi đứng phát biểu."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 42,
+    "question": "Khi gặp cán bộ, chiến sĩ trong lực lượng CAND, QĐND đến thăm và làm việc, đồng chí thực hiện hình thức chào như thế nào?",
+    "options": [
+      "Chào bằng lời.",
+      "Chào bằng động tác.",
+      "Chào bằng động tác hoặc kết hợp chào bằng lời."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 43,
+    "question": "Trường hợp đồng chí đang ngồi ở vị trí trên lễ đài khi được giới thiệu đại biểu, phải thực hiện động tác chào như thế nào?",
+    "options": [
+      "Đứng dậy đi về giữa lễ đài thực hiện động tác chào.",
+      "Đứng dậy hướng về phía đơn vị thực hiện động tác chào.",
+      "Đứng dậy đi về đứng trên bục thực hiện động tác chào."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 44,
+    "question": "Khi có đoàn kiểm tra đến thăm, nếu đơn vị đang đứng thành hàng ngũ thì chỉ huy phải thực hiện như thế nào?",
+    "options": [
+      "Chỉnh đốn đội hình rồi chờ chỉ thị, xong cán bộ chiến sĩ vỗ tay.",
+      "Chỉnh đốn đội hình, chào báo cáo cấp trên hoặc trưởng đoàn theo điều lệnh đội ngũ.",
+      "Cho đội hình giải tán, mời đoàn vào phòng làm việc tiếp đón."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 45,
+    "question": "Theo Thông tư 113/2025/TT-BCA, hành vi nào bị xử lý bằng hình thức hạ hai bậc xếp loại cán bộ trong năm?",
+    "options": [
+      "Gây mất đoàn kết nội bộ, ảnh hưởng đến công tác chiến đấu và uy tín của lực lượng.",
+      "Làm việc không có chương trình kế hoạch; không xây dựng chương trình kế hoạch công tác tuần.",
+      "Bao che, không xử lý vi phạm điều lệnh hoặc kéo dài thời hạn xử lý vi phạm."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 46,
+    "question": "Cán bộ, chiến sĩ khi trao và nhận huân chương, danh hiệu vinh dự nhà nước có phải đội mũ kê pi không?",
+    "options": [
+      "Phải đội mũ kê pi.",
+      "Không phải đội mũ kê pi.",
+      "Thủ trưởng cấp trên trao thưởng phải đội mũ."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 47,
+    "question": "Khi giao tiếp với người ngoài lực lượng Công an nhân dân, cán bộ chiến sĩ phải xưng hô như thế nào?",
+    "options": [
+      "Tùy từng trường hợp có thể gọi là “đồng chí”, xưng “tôi” hoặc tùy lứa tuổi để xưng hô phù hợp phong tục Việt Nam.",
+      "Tùy trường hợp cụ thể có thể gọi là “anh”, “chị”, “em”, xưng “tôi”.",
+      "Tùy trường hợp cụ thể có thể gọi là “ông”, “bà”, “cụ”, xưng “tôi”."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 48,
+    "question": "Ứng xử khi giao tiếp trong lực lượng Công an nhân dân, đáp án nào sau đây là đúng?",
+    "options": [
+      "Trước khi vào phòng làm việc người khác phải gõ cửa, được đồng ý mới vào.",
+      "Cấp dưới xin gặp cấp trên phải nêu rõ lý do, cấp trên đồng ý mới được gặp; không mang theo vũ khí, công cụ hỗ trợ.",
+      "Khi tiếp xúc cấp trên, cấp dưới không tự động bắt tay trước hoặc tự ý kéo ghế ngồi; phải chào cấp trên trước khi ra về.",
+      "Tất cả đáp án trên."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 49,
+    "question": "Khi chào cờ Tổ quốc, đồng chí đọc 5 lời thề danh dự đứng ở vị trí nào?",
+    "options": [
+      "Đứng bên phải, ngang hàng và cách chủ lễ 01m (mét).",
+      "Đứng bên trái, ngang hàng và cách chủ lễ 01m (mét).",
+      "Đứng bên trái, ngang hàng và cách chủ lễ 1,5m (mét)."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 50,
+    "question": "Theo Thông tư 113/2025/TT-BCA, đơn vị bị xử lý bằng hình thức phê bình khi vi phạm lỗi nào?",
+    "options": [
+      "Thực hiện không đúng quy định về chế độ giao ban, hội họp, học tập; chế độ nghỉ và trang trí khánh tiết hội trường.",
+      "Không tổ chức chào cờ Tổ quốc định kỳ theo quy định.",
+      "Để xảy ra mất đoàn kết nội bộ trong đơn vị."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 51,
+    "question": "Thông tư số 04/2025/TT-BCA, ngày 13/01/2025 của Bộ Công an quy định “Cán bộ, chiến sĩ khi giao tiếp qua các phương tiện thông tin cần đảm bảo những yêu cầu gì?",
+    "options": [
+      "Khi giao tiếp qua các phương tiện thông tin, cán bộ, chiến sĩ Công an nhân dân phải giới thiệu tên và đơn vị của mình; ngôn ngữ giao tiếp phải đúng mực, lịch sự, rõ ràng, mạch lạc.",
+      "Cần trao đổi cụ thể, rõ ràng, dứt khoát, đáp ứng được yêu cầu cuộc gọi; phản ảnh được nội dung cuộc trao đổi, không phụ thuộc thời gian. Nếu không tiện trả lời thì nói lời xin lỗi và ngắt cuộc trao đổi.",
+      "Nội dung trao đổi ngắn gọn, tập trung vào công việc; không tiện trả lời thì xin lỗi, không đột ngột ngắt cuộc trao đổi; thực hiện đúng quy định của pháp luật về bảo vệ bí mật Nhà nước trong quá trình trao đổi thông tin, kết thúc cuộc trao đổi bằng lời chào hoặc cảm ơn.",
+      "Cả A và C đúng."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 52,
+    "question": "Những điều cấm đối với cán bộ, chiến sĩ Công an nhân dân, đáp án nào là đúng?",
+    "options": [
+      "Ăn, uống ở hàng quán vỉa hè (trừ trường hợp do yêu cầu công tác hoặc lý do khách quan khác); uống rượu, bia và các chất có cồn trước, trong giờ làm việc, giờ nghỉ trưa của ngày làm việc, ngày trực và khi đang làm nhiệm vụ.",
+      "Mặc trang phục Công an nhân dân ăn, uống ở hàng quán mở trên vỉa hè trái quy định; hút thuốc khi làm nhiệm vụ, khi học tập, hội họp và ở những nơi có biển cấm.",
+      "Sử dụng rượu, bia và các chất có cồn trong các trường hợp: Sau khi hết giờ làm việc, giờ trực, trừ trường hợp phục vụ yêu cầu đối ngoại hoặc được sự đồng ý của Thủ trưởng đơn vị.",
+      "Cả A và B đúng."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 53,
+    "question": "Thông tư số 04/2025/TT-BCA, ngày 13/01/2025 của Bộ Công an quy định những điều cấm đối với cán bộ, chiến sĩ Công an nhân dân, quy định nào sau đây là đúng?",
+    "options": [
+      "Sử dụng trái phép chất ma túy; đánh bạc dưới mọi hình thức; mê tín, dị đoan; lập bàn thờ, thắp hương, thờ cúng trong phòng làm việc, phòng ở chung của đơn vị (trừ nơi thờ tự tập trung của đơn vị).",
+      "Sử dụng rượu, bia và các chất có cồn trái quy định; có hành vi vi phạm pháp luật về trật tự an toàn giao thông; có thái độ, lời nói, hành vi thiếu văn hóa khi tiếp xúc với Nhân dân.",
+      "Gây mất đoàn kết nội bộ; lợi dụng chức vụ, quyền hạn để trục lợi; tiết lộ bí mật Nhà nước, bí mật ngành Công an dưới mọi hình thức.",
+      "Tất cả các phương án trên."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 54,
+    "question": "Cán bộ, chiến sĩ Công an nhân dân khi thực hiện nhiệm vụ tiếp dân phải đảm bảo yêu cầu nào?",
+    "options": [
+      "Phải có thái độ kính trọng, lễ phép, tận tụy phục vụ Nhân dân; lắng nghe, tiếp thu ý kiến của Nhân dân; giải quyết kịp thời, đúng pháp luật các yêu cầu chính đáng của Nhân dân.",
+      "Phải có mặt tại nơi tiếp dân đúng giờ; mặc trang phục CAND đúng quy định; giải quyết công việc nhanh chóng, không gây khó khăn, phiền hà cho Nhân dân.",
+      "Không được có thái độ hách dịch, cửa quyền, sách nhiễu hoặc có lời nói, cử chỉ thiếu văn hóa khi tiếp xúc với Nhân dân.",
+      "Cả A và C đúng."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 55,
+    "question": "Khi thực hiện động tác chào báo cáo, người báo cáo phải đứng ở vị trí nào?",
+    "options": [
+      "Đứng cách người nhận báo cáo từ 3 đến 5 bước, tư thế đứng nghiêm, thực hiện động tác chào và báo cáo.",
+      "Đứng trước người nhận báo cáo, cách khoảng 2 bước, thực hiện động tác chào.",
+      "Đứng bên trái người nhận báo cáo, thực hiện động tác chào."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 56,
+    "question": "Trong Điều lệnh đội ngũ, khi thực hiện động tác “Quay bên phải”, người thực hiện phải dùng bộ phận nào của chân để làm trụ?",
+    "options": [
+      "Dùng gót chân trái và mũi chân phải làm trụ.",
+      "Dùng gót chân phải và mũi chân trái làm trụ.",
+      "Dùng cả hai bàn chân xoay về bên phải."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 57,
+    "question": "Khi thực hiện động tác “Đi đều”, độ dài bước đi của cán bộ, chiến sĩ nam là bao nhiêu?",
+    "options": [
+      "60 cm.",
+      "70 cm.",
+      "75 cm."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 58,
+    "question": "Khi đang đi đều, nghe động lệnh “Đứng lại”, cán bộ, chiến sĩ phải thực hiện tiếp bao nhiêu bước đi nữa?",
+    "options": [
+      "1 bước.",
+      "2 bước.",
+      "3 bước."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 59,
+    "question": "Thông tư số 113/2025/TT-BCA quy định hành vi “Không chấp hành mệnh lệnh của cấp trên” bị xử lý như thế nào?",
+    "options": [
+      "Hạ một bậc danh hiệu thi đua năm.",
+      "Hạ hai bậc danh hiệu thi đua năm.",
+      "Xử lý kỷ luật theo quy định của Bộ Công an."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 60,
+    "question": "Cán bộ, chiến sĩ khi mặc trang phục CAND đi ngoài đường có được phép đeo kính râm không?",
+    "options": [
+      "Được đeo nếu trời nắng.",
+      "Không được đeo kính tối màu, kính râm khi trực tiếp giải quyết công việc với người khác hoặc khi thực hiện nhiệm vụ (trừ trường hợp đặc biệt do yêu cầu nghiệp vụ hoặc bệnh lý).",
+      "Chỉ được đeo khi đi xe máy."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 61,
+    "question": "Chào cờ Tổ quốc định kỳ hằng tháng, được tổ chức vào thời gian nào?",
+    "options": [
+      "Đầu giờ làm việc buổi sáng trong ngày thứ hai của tuần đầu tháng (tuần đầu tháng được xác định là tuần làm việc đầu tiên của tháng không có ngày của tháng trước).",
+      "Đầu giờ làm việc buổi sáng trong ngày làm việc đầu tiên của tuần đầu tháng (tuần đầu tháng được xác định là tuần làm việc đầu tiên của tháng không có ngày của tháng trước).",
+      "Đầu giờ làm việc buổi sáng của ngày đầu tháng (ngày đầu tháng được xác định là ngày làm việc đầu tiên của tháng)."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 62,
+    "question": "Các đơn vị nào tổ chức chào cờ Tổ quốc theo định kỳ hằng tuần vào đầu giờ làm việc buổi sáng ngày làm việc đầu tiên của tuần?",
+    "options": [
+      "Các đơn vị cấp đại đội, tiểu đoàn có trụ sở độc lập, các đơn vị huấn luyện tổ chức cho cán bộ, chiến sĩ; các học viện, trường Công an nhân dân.",
+      "Công an xã, phường, thị trấn, đội, đồn, trạm công an và tương đương có trụ sở độc lập.",
+      "Công an huyện, thành phố, thị xã tương đương trở lên có trụ sở độc lập."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 63,
+    "question": "Đồng chí cho biết khi nhận thưởng xong, lãnh đạo cấp trên về vị trí đại biểu; cán bộ, chiến sĩ nhận thưởng đi về theo thứ tự như thế nào?",
+    "options": [
+      "Lãnh đạo cấp trên về vị trí đại biểu; cán bộ, chiến sĩ nhận thưởng thành một hàng dọc theo thứ tự từ trái qua phải (theo hướng nhìn lên lễ đài) đi đều về vị trí ban đầu.",
+      "Lãnh đạo cấp trên về vị trí đại biểu; cán bộ, chiến sĩ nhận thưởng thành một hàng dọc theo thứ tự từ phải qua trái (theo hướng nhìn lên lễ đài) đi đều về vị trí ban đầu.",
+      "Lãnh đạo cấp trên trao thưởng và cán bộ, chiến sĩ nhận thưởng đi đều về vị trí ban đầu. Tay trái kẹp giấy khen, mặt trước quay ra ngoài, cánh tay trái thẳng, bốn ngón con nắm giữa khung, lòng bàn tay quay vào trong sát thân người."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 64,
+    "question": "Theo Thông tư số 113/2025/TT-BCA, ngày 28/11/2025 của Bộ Công an quy định “Xử lý bằng hình thức hạ hai bậc xếp loại đơn vị trong năm đối với đơn vị vi phạm\" thuộc nhóm hành vi nào sau đây ?",
+    "options": [
+      "Tổng số lượt cán bộ, chiến sĩ vi phạm điều lệnh trong năm có tỷ lệ từ 10% đến 20% so với biên chế của đơn vị.",
+      "Không xây dựng, triển khai chương trình, kế hoạch công tác điều lệnh, quân sự, võ thuật.",
+      "Thực hiện không đúng chức trách nhiệm vụ được giao.",
+      "Cả A và B đúng."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 65,
+    "question": "Chào cờ Tổ quốc ở trong nhà có bàn ghế, khi hô khẩu lệnh \"Chào cờ - chào\", những đồng chí nào phải thực hiện động tác chào?",
+    "options": [
+      "Đồng chí chủ lễ, trực ban lễ chào cờ, lãnh đạo đơn vị đứng hàng thứ nhất và lãnh đạo đơn vị trực thuộc đứng hàng ngang thứ 2, phía trước không có lãnh đạo đơn vị tổ chức buổi lễ.",
+      "Đồng chí chủ lễ, trực ban lễ chào cờ, đồng chí đọc 5 lời thề danh dự và cán bộ, chiến sĩ đứng hàng thứ nhất.",
+      "Chủ lễ, trực ban buổi lễ và cán bộ, chiến sĩ mặc trang phục Công an nhân dân thực hiện động tác chào.",
+      "Tất cả các đáp án trên."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 66,
+    "question": "Quy định về chức trách, nhiệm vụ của lãnh đạo, chỉ huy Công an các đơn vị, địa phương như thế nào là đúng?",
+    "options": [
+      "Thực hiện nguyên tắc tập trung dân chủ, tập thể lãnh đạo, cá nhân phụ trách, chế độ một người chỉ huy và quy chế hoạt động của cấp ủy đảng; duy trì thực hiện nghiêm túc chế độ làm việc của lãnh đạo, chỉ huy và đơn vị.",
+      "Thực hiện công tác giáo dục chính trị tư tưởng; xây dựng và kiện toàn tổ chức bộ máy; quy hoạch, đào tạo và bồi dưỡng cán bộ; thực hiện nghiêm túc chế độ quản lý cán bộ; chăm lo xây dựng, củng cố và tăng cường đoàn kết nội bộ; động viên, khen thưởng kịp thời và xử lý kỷ luật theo đúng quy định của Nhà nước và của Bộ trưởng Bộ Công an nhằm xây dựng đơn vị trong sạch, vững mạnh toàn diện, đáp ứng yêu cầu, nhiệm vụ chính trị.",
+      "Quản lý tài chính, tài sản, vật tư, vũ khí, vật liệu nổ, công cụ hỗ trợ, phương tiện, trang thiết bị kỹ thuật nghiệp vụ của đơn vị đúng quy định của pháp luật và của Bộ Công an, bảo đảm yêu cầu công tác, chiến đấu với các loại tội phạm trong tình hình hiện nay.",
+      "Cả B và C."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 67,
+    "question": "Vị trí điều hành chào cờ Tổ quốc của đồng chí trực ban được quy định như thế nào?",
+    "options": [
+      "Vị trí bên phải, phía trước chếch đội hình đơn vị 45 độ, cách đội hình đơn vị một khoảng cách thích hợp và thực hiện động tác quay hướng về cờ Tổ quốc.",
+      "Đứng phía trên, bên trái chếch đội hình đơn vị 45 độ, cách đội hình đơn vị một khoảng cách thích hợp và thực hiện động tác quay hướng về cờ Tổ quốc.",
+      "Đứng ngang với hàng cán bộ, chiến sĩ trên cùng, cách đội hình đơn vị một khoảng cách thích hợp và thực hiện động tác quay hướng về cờ Tổ quốc."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 68,
+    "question": "Thông tư số 04/2025/TT-BCA, ngày 13/01/2025 của Bộ Công an quy định, chào cờ Tổ quốc, khi hô khẩu lệnh \"Chào cờ - chào\", những đồng chí nào phải thực hiện động tác chào?",
+    "options": [
+      "Chủ lễ, trực ban buổi lễ, cán bộ, chiến sĩ đứng hàng ngang trên cùng thực hiện động tác chào.",
+      "Chủ lễ và cán bộ, chiến sĩ đứng hàng ngang trên cùng thực hiện động tác chào.",
+      "Chủ lễ, trực ban buổi lễ, cán bộ, chiến sĩ thực hiện động tác chào."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 69,
+    "question": "Đội hình chào cờ Tổ quốc khi tổ chức buổi lễ ở trong nhà có bàn ghế, vị trí của lãnh đạo và cán bộ, chiến sĩ ngồi như thế nào?",
+    "options": [
+      "Theo phân công của chủ lễ, theo nguyên tắc từ trên xuống dưới, cấp trên ngồi trước, cấp dưới ngồi sau, người có cấp hàm cao ngồi trước, người có cấp hàm thấp hơn ngồi sau.",
+      "Lãnh đạo đơn vị tham gia lễ chào cờ, lãnh đạo đơn vị trực thuộc đứng hàng ngang thứ nhất và hàng thứ 2, các hàng tiếp theo là cán bộ, chiến sĩ.",
+      "Lãnh đạo đơn vị đứng hàng ngang thứ nhất, các hàng ngang thứ hai trở xuống là lãnh đạo đơn vị trực thuộc và cán bộ, chiến sĩ."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 70,
+    "question": "Quan hệ giữa lãnh đạo, chỉ huy với cán bộ, chiến sĩ thuộc quyền, khi thi hành nhiệm vụ, cấp dưới phải tuân thủ điều gì?",
+    "options": [
+      "Cấp dưới phải tuyệt đối chấp hành mệnh lệnh cấp trên trong khi thi hành nhiệm vụ.",
+      "Phải tôn trọng, lắng nghe thực hiện ý kiến của cấp trên.",
+      "Phải nghiêm chỉnh chấp hành nhiệm vụ được giao."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 71,
+    "question": "Thông tư số 115/2025/TT-BCA quy định áp dụng kết quả kiểm tra tập huấn đối với cán bộ, chiến sĩ như thế nào?",
+    "options": [
+      "Cán bộ, chiến sĩ bỏ tập huấn không có lý do bị kiểm điểm Nghiêm khắc trước toàn thể đơn vị.",
+      "Cán bộ, chiến sĩ bỏ tập huấn không có lý do bị kỷ luật bằng hình thức Khiển trách.",
+      "Cán bộ, chiến sĩ bỏ tập huấn không có lý do lãnh đạo đơn vị phải nhắc nhở, đồng thời tạo điều kiện cho tổ chức tập huấn vào thời điểm thích hợp."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 72,
+    "question": "Các trường hợp được hoãn tập huấn điều lệnh, quân sự, võ thuật như thế nào?",
+    "options": [
+      "Cán bộ, chiến sĩ nữ có thai, nuôi con dưới 12 tháng tuổi; cán bộ, chiến sĩ đi công tác hoặc được lãnh đạo đơn vị cho nghỉ vào thời điểm tập huấn.",
+      "Cán bộ, chiến tham gia đội tuyển hội thi điều lệnh, quân sự, võ thuật hoặc được lãnh đạo đơn vị cho nghi vào thời điểm tập huấn.",
+      "Cán bộ, chiến sĩ ốm, đau, nghỉ đột xuất, đi công tác hoặc được lãnh đạo đơn vị cho nghi vào thời điểm tập huấn. Các đối tượng được hoãn tập huấn phải tham gia tập huấn vào đợt tiếp theo và phải hoàn thành tập huấn bổ sung trước thời điểm bình xét danh hiệu thi đua năm."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 73,
+    "question": "Khi thủ trưởng đi công tác vắng thì phải chỉ định ai là người thay thế?",
+    "options": [
+      "Chỉ định một phó thủ trưởng thay mình phụ trách đơn vị.",
+      "Chỉ định một đồng chí trong cấp ủy thay thế mình điều hành công việc.",
+      "Chỉ định đồng chí trực ban đơn vị thay thế mình điều hành công việc."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 74,
+    "question": "Đơn vị bị xử lý bằng hình thức hạ một bậc danh hiệu thi đua trong năm khi vi phạm lỗi nào?",
+    "options": [
+      "Dùng trụ sở cơ quan, đơn vị cho thuê, cho mượn trái quy định của Bộ Công an.",
+      "Tổng số lượt cán bộ, chiến sĩ vi phạm điều lệnh trong năm có tỷ lệ từ 5% đến dưới 10% so với biên chế của đơn vị.",
+      "Tổng số lượt cán bộ, chiến sĩ vi phạm điều lệnh trong năm có tỷ lệ từ 10% đến 20% so với biên chế của đơn vị."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 75,
+    "question": "Gián cách giữa hai cán bộ, chiến sĩ đứng cạnh nhau trên 1 hàng ngang, cự ly giữa hai cán bộ, chiến sĩ đứng liền trước sau nhau là bao nhiêu?",
+    "options": [
+      "70 cm và 100 cm.",
+      "75 cm và 80 cm.",
+      "100 cm và 85 cm."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 76,
+    "question": "Quan hệ giữa cán bộ, chiến sĩ Công an nhân dân là mối quan hệ như thế nào?",
+    "options": [
+      "Là quan hệ bình đẳng, tôn trọng lẫn nhau, giúp đỡ nhau, cùng thực hiện nhiệm vụ được cấp trên giao.",
+      "Là quan hệ đồng chí, đồng đội, đoàn kết, thống nhất, giúp đỡ nhau hoàn thành nhiệm vụ được giao.",
+      "Là quan hệ đồng chí, đồng đội, đồng nghiệp, tôn trọng, đoàn kết, thương yêu, giúp đỡ nhau hoàn thành nhiệm vụ."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 77,
+    "question": "Đơn vị bị xử lý bằng hình thức hạ hai bậc danh hiệu thi đua năm vi phạm lỗi nào?",
+    "options": [
+      "Tổng số lượt cán bộ, chiến sĩ vi phạm điều lệnh trong năm có tỷ lệ từ 10% đến 20% so với biên chế của đơn vị.",
+      "Không tổ chức giao ban; không tổ chức trực chỉ huy, trực ban, thường trực chiến đấu; không xây dựng chương trình, kế hoạch công tác tuần, tháng; không tổ chức chào cờ Tổ quốc định kỳ.",
+      "Không tổ chức sơ kết, tổng kết rút kinh nghiệm các chuyên đề công tác theo kế hoạch của Bộ Công an; sơ kết công tác 6 tháng đầu năm và tổng kết năm.",
+      "Cả B và C."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 78,
+    "question": "Cán bộ, chiến sĩ Công an nhân dân có phải xây dựng chương trình, kế hoạch công tác tuần không?",
+    "options": [
+      "Không phải xây dựng chương trình, kế hoạch công tác vì phải giữ yếu tố bí mật về nghiệp vụ.",
+      "Cán bộ, chiến sĩ Công an nhân dân phải xây dựng chương trình, kế hoạch công tác tuần được lãnh đạo, chỉ huy trực tiếp phê duyệt.",
+      "Xây dựng chương trình, kế hoạch công tác và không phải trình cấp có thẩm quyền phê duyệt, thực hiện xong báo cáo."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 79,
+    "question": "Cán bộ, chiến sĩ bị xử lý bằng hình thức phê bình khi vi phạm lỗi nào?",
+    "options": [
+      "Thực hiện không đúng quy định về xưng hô khi giao tiếp; ứng xử khi giao tiếp qua phương tiện thông tin; tư thế tác phong không nghiêm túc (để tay túi quần, đeo kính tối màu trái quy định).",
+      "Không tham gia chào cờ Tổ quốc theo quy định; trực ban không ghi chép sổ sách, không đeo băng trực ban, không bàn giao đầy đủ.",
+      "Thực hiện không đúng về xưng hô; ứng xử với cán bộ, chiến sĩ và Nhân dân; đeo kính màu đen khi giải quyết công việc.",
+      "Cả A và B đúng."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 80,
+    "question": "Cán bộ, chiến sĩ bị xử lý bằng hình thức hạ một bậc danh hiệu thi đua năm lỗi nào sau đây?",
+    "options": [
+      "Thực hiện đúng các quy định về thực hành tiết kiệm, chống lãng phí.",
+      "Hội họp không mặc trang phục đúng quy định, mang điện thoại vào phòng họp khi có lệnh cấm; thực hiện không đúng quy tắc ứng xử CAND.",
+      "Tập huấn điều lệnh, quân sự, võ thuật trong năm không đạt yêu cầu.",
+      "Cả B và C."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 81,
+    "question": "Ứng xử khi giao tiếp với Nhân dân theo Thông tư 34/2019/TT-BCA là gì?",
+    "options": [
+      "Thái độ ứng xử có văn hóa, tôn trọng, khiêm tốn, bình tĩnh, tận tình, chu đáo; không sách nhiễu, gây phiền hà.",
+      "Giữ đúng tư thế, lễ tiết, tác phong; không có lời nói, cử chỉ xúc phạm, phân biệt đối xử.",
+      "Thái độ ứng xử có văn hóa, tôn trọng, khiêm nhường, nhẹ nhàng; thực hiện đúng chính sách của Đảng và pháp luật."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 82,
+    "question": "Cán bộ, chiến sĩ bị xử lý bằng hình thức hạ hai bậc danh hiệu thi đua năm khi vi phạm lỗi nào?",
+    "options": [
+      "Vi phạm các quy định về trật tự an toàn giao thông.",
+      "Uống rượu, bia trước/trong giờ làm việc, giờ trực; vi phạm chế độ trực chỉ huy, trực ban, thường trực chiến đấu.",
+      "Tập huấn điều lệnh, quân sự, võ thuật trong năm không đạt yêu cầu."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 83,
+    "question": "Việc quản lý vũ khí, vật liệu nổ, công cụ hỗ trợ phải thực hiện như thế nào?",
+    "options": [
+      "Quản lý chặt chẽ, bảo đảm an toàn; có giấy phép và sổ theo dõi; phân công cán bộ quản lý có hiểu biết và ghi chép đầy đủ.",
+      "Quản lý chặt chẽ theo quy định; phân công cán bộ chuyên môn quản lý; bảo đảm yêu cầu sẵn sàng chiến đấu; chấp hành yêu cầu kiểm tra.",
+      "Quản lý chặt chẽ theo quy định, bảo đảm an toàn; có giấy phép sử dụng và sổ theo dõi; phân công cán bộ có chuyên môn ghi chép, bảo dưỡng đúng quy định."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 84,
+    "question": "Cán bộ, chiến sĩ mặc thường phục do yêu cầu công tác phải được thủ trưởng cấp nào quyết định?",
+    "options": [
+      "Cục trưởng, Giám đốc Công an tỉnh và tương đương.",
+      "Trưởng phòng, Trưởng Công an cấp huyện và tương đương.",
+      "Thủ trưởng cơ quan cảnh sát điều tra các cấp."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 85,
+    "question": "Cán bộ, chiến sĩ bị xử lý bằng hình thức hạ một bậc danh hiệu thi đua năm đối với hành vi nào?",
+    "options": [
+      "Thực hiện không đúng quy định về kỷ luật công tác, hội họp, huấn luyện.",
+      "Mặc trang phục CAND ăn uống vỉa hè trái quy định; hút thuốc khi làm nhiệm vụ, trong phòng họp, nơi có biển cấm.",
+      "Lập bàn thờ, thắp hương không đúng quy định trong phạm vi trụ sở đơn vị (trừ trường hợp lễ tang, thờ Bác Hồ, ngày Tết).",
+      "Cả B và C."
+    ],
+    "answer": 3
+  },
+  {
+    "id": 86,
+    "question": "Tình tiết tăng nặng trong xử lý vi phạm điều lệnh là gì?",
+    "options": [
+      "Thực hiện không đúng quy định về kỷ luật khi công tác biệt phái, xã hội hóa.",
+      "Thực hiện không đúng quy định về kỷ luật công tác, hội họp, học tập.",
+      "Có hành vi, lời nói gây cản trở, đối phó hoặc không chấp hành việc kiểm tra của Tổ kiểm tra điều lệnh."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 87,
+    "question": "Tình tiết giảm nhẹ trong xử lý vi phạm điều lệnh là gì?",
+    "options": [
+      "Có hành động ngăn chặn, giảm bớt hậu quả; kịp thời khắc phục; vi phạm do nguyên nhân khách quan.",
+      "Uống rượu bia trước/trong giờ làm việc do lỗi khách quan.",
+      "Không nắm vững quy định về chức trách nhiệm vụ; làm việc không có kế hoạch nhưng có báo cáo chỉ huy."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 88,
+    "question": "Xử lý trách nhiệm liên đới đối với đơn vị vi phạm điều lệnh như thế nào?",
+    "options": [
+      "Thực hiện không đúng quy định về ra mệnh lệnh; vi phạm trật tự ATGT; can thiệp trái phép vào việc xử lý vi phạm.",
+      "Nếu CBCS bị xử lý từ không tặng danh hiệu thi đua đến không hoàn thành nhiệm vụ thì thủ trưởng đơn vị bị hạ một bậc danh hiệu thi đua năm.",
+      "Đơn vị bị hạ một bậc danh hiệu thi đua thì thủ trưởng bị phê bình; đơn vị vi phạm nhiều lần thì thủ trưởng bị hạ một bậc danh hiệu thi đua năm."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 89,
+    "question": "Ứng xử khi đăng ký tài khoản Internet, mạng xã hội quy định như thế nào?",
+    "options": [
+      "Thực hiện nghiêm đường lối của Đảng, pháp luật nhà nước và quy định ngành trong đấu tranh xử lý vi phạm trên mạng.",
+      "Không mạo danh cá nhân/tổ chức; không dùng tên/hình ảnh đơn vị CAND làm tài khoản cá nhân; không công khai thông tin cá nhân liên quan đến lực lượng; không dùng từ ngữ phản cảm.",
+      "Giữ gìn sự trong sáng của tiếng Việt; không kích động bạo lực, phân biệt vùng miền; không tiếp tay trào lưu lệch lạc."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 90,
+    "question": "Khi có cấp trên đến thăm, hội họp hoặc sinh hoạt tập trung, trực ban đơn vị phải làm gì?",
+    "options": [
+      "Hô “Nghiêm”, chào báo cáo cấp trên.",
+      "Hô “Nghiêm” (nếu đang đứng) hoặc “Đơn vị chú ý - Đứng dậy” (nếu đang ngồi), sau đó hô “Nghiêm” và chào báo cáo theo điều lệnh.",
+      "Cho đội hình giải tán, mời cấp trên vào phòng làm việc tiếp đón."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 91,
+    "question": "Hành vi nào khiến cán bộ, chiến sĩ bị hạ một bậc xếp loại cán bộ trong năm?",
+    "options": [
+      "Mang phương tiện thông tin liên lạc vào phòng họp khi đã có quy định cấm; thực hiện không đúng quy tắc ứng xử CAND.",
+      "Làm việc không có chương trình kế hoạch tuần.",
+      "Hội họp không mặc trang phục đúng quy định, vắng mặt không lý do, mang điện thoại vào phòng họp khi có quy định cấm."
+    ],
+    "answer": 2
+  },
+  {
+    "id": 92,
+    "question": "Ứng xử của lãnh đạo, chỉ huy với cấp dưới như thế nào là đúng?",
+    "options": [
+      "Gương mẫu trong công tác, tu dưỡng đạo đức để cấp dưới noi theo; trung thực, kịp thời với cấp dưới về công tác chuyên môn.",
+      "Chỉ đạo cấp dưới bằng mệnh lệnh dứt khoát, không cần giải thích.",
+      "Giữ khoảng cách nhất định với cấp dưới để đảm bảo uy nghiêm."
+    ],
+    "answer": 0
+  }
+];
 
     function loadQuiz() {
         const wrapper = document.getElementById('questions-wrapper');
@@ -335,7 +992,7 @@
 
             wrapper.innerHTML += `
                 <div class="question-block" id="block-${index}">
-                    <div class="question-text">Câu ${index + 1}: ${item.q}</div>
+                    <div class="question-text">Câu ${index + 1}: ${item.question}</div>
                     ${optionsHTML}
                 </div>
             `;
